@@ -1,0 +1,1326 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Gibg API",
+    "description": "Example of CRUD API ",
+    "version": "1.0.0"
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "apiKeyAuth": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "x_access_token"
+    },
+    "petstore_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "https://petstore.swagger.io/oauth/authorize",
+      "flow": "implicit",
+      "scopes": {
+        "read_pets": "read your pets",
+        "write_pets": "modify pets in your account"
+      },
+      "security": [
+        {
+          "apiKeyAuth": []
+        }
+      ]
+    }
+  },
+  "paths": {
+    "/api/admin": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "example": "any"
+                },
+                "id": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                },
+                "password_expiredate": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "activation": {
+                  "example": "any"
+                },
+                "comp_mng": {
+                  "example": "any"
+                },
+                "mbr_mng": {
+                  "example": "any"
+                },
+                "srvc_mng": {
+                  "example": "any"
+                },
+                "rsv_mng": {
+                  "example": "any"
+                },
+                "cnt_mng": {
+                  "example": "any"
+                },
+                "second_code": {
+                  "example": "any"
+                },
+                "second_code_time": {
+                  "example": "any"
+                },
+                "writedate": {
+                  "example": "any"
+                },
+                "modifydate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/auth/signin": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/banner": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "link": {
+                  "example": "any"
+                },
+                "modifydate": {
+                  "example": "any"
+                },
+                "writedate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "bnid": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "link": {
+                  "example": "any"
+                },
+                "modifydate": {
+                  "example": "any"
+                },
+                "writedate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/banner/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/cars": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/car": {
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "car_name": {
+                  "example": "any"
+                },
+                "brand": {
+                  "example": "any"
+                },
+                "image": {
+                  "example": "any"
+                },
+                "color": {
+                  "example": "any"
+                },
+                "year": {
+                  "example": "any"
+                },
+                "plate": {
+                  "example": "any"
+                },
+                "country": {
+                  "example": "any"
+                },
+                "cc": {
+                  "example": "any"
+                },
+                "no": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/company-infra": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "comid": {
+                  "example": "any"
+                },
+                "group_seat": {
+                  "example": "any"
+                },
+                "valet": {
+                  "example": "any"
+                },
+                "booking": {
+                  "example": "any"
+                },
+                "pet": {
+                  "example": "any"
+                },
+                "rest_area": {
+                  "example": "any"
+                },
+                "parking": {
+                  "example": "any"
+                },
+                "visit_trip": {
+                  "example": "any"
+                },
+                "wifi": {
+                  "example": "any"
+                },
+                "facilities": {
+                  "example": "any"
+                },
+                "coffee": {
+                  "example": "any"
+                },
+                "writedate": {
+                  "example": "any"
+                },
+                "modifydate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "ciid": {
+                  "example": "any"
+                },
+                "comid": {
+                  "example": "any"
+                },
+                "group_seat": {
+                  "example": "any"
+                },
+                "valet": {
+                  "example": "any"
+                },
+                "booking": {
+                  "example": "any"
+                },
+                "pet": {
+                  "example": "any"
+                },
+                "rest_area": {
+                  "example": "any"
+                },
+                "parking": {
+                  "example": "any"
+                },
+                "visit_trip": {
+                  "example": "any"
+                },
+                "wifi": {
+                  "example": "any"
+                },
+                "facilities": {
+                  "example": "any"
+                },
+                "coffee": {
+                  "example": "any"
+                },
+                "writedate": {
+                  "example": "any"
+                },
+                "modifydate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/company-infra/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/company-payment": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "comid": {
+                  "example": "any"
+                },
+                "credit": {
+                  "example": "any"
+                },
+                "sspay": {
+                  "example": "any"
+                },
+                "zeropay": {
+                  "example": "any"
+                },
+                "cash": {
+                  "example": "any"
+                },
+                "ggvoucher": {
+                  "example": "any"
+                },
+                "kakaopay": {
+                  "example": "any"
+                },
+                "etc": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cpid": {
+                  "example": "any"
+                },
+                "comid": {
+                  "example": "any"
+                },
+                "credit": {
+                  "example": "any"
+                },
+                "sspay": {
+                  "example": "any"
+                },
+                "zeropay": {
+                  "example": "any"
+                },
+                "cash": {
+                  "example": "any"
+                },
+                "ggvoucher": {
+                  "example": "any"
+                },
+                "kakaopay": {
+                  "example": "any"
+                },
+                "etc": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/company-payment/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/company": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "comp_name",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                },
+                "comp_name": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "addr1": {
+                  "example": "any"
+                },
+                "addr2": {
+                  "example": "any"
+                },
+                "latitude": {
+                  "example": "any"
+                },
+                "longitude": {
+                  "example": "any"
+                },
+                "entry": {
+                  "example": "any"
+                },
+                "introduction": {
+                  "example": "any"
+                },
+                "business_type": {
+                  "example": "any"
+                },
+                "cop_sn": {
+                  "example": "any"
+                },
+                "ceo_nm": {
+                  "example": "any"
+                },
+                "biz_kind": {
+                  "example": "any"
+                },
+                "biz_type": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "second_code": {
+                  "example": "any"
+                },
+                "second_code_time": {
+                  "example": "any"
+                },
+                "writedate": {
+                  "example": "any"
+                },
+                "modifydate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "comid": {
+                  "example": "any"
+                },
+                "comp_name": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "addr1": {
+                  "example": "any"
+                },
+                "addr2": {
+                  "example": "any"
+                },
+                "latitude": {
+                  "example": "any"
+                },
+                "longitude": {
+                  "example": "any"
+                },
+                "entry": {
+                  "example": "any"
+                },
+                "introduction": {
+                  "example": "any"
+                },
+                "business_type": {
+                  "example": "any"
+                },
+                "cop_sn": {
+                  "example": "any"
+                },
+                "ceo_nm": {
+                  "example": "any"
+                },
+                "biz_kind": {
+                  "example": "any"
+                },
+                "biz_type": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "second_code": {
+                  "example": "any"
+                },
+                "second_code_time": {
+                  "example": "any"
+                },
+                "writedate": {
+                  "example": "any"
+                },
+                "modifydate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/company/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/suggestion": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "comid": {
+                  "example": "any"
+                },
+                "type": {
+                  "example": "any"
+                },
+                "status": {
+                  "example": "any"
+                },
+                "closure": {
+                  "example": "any"
+                },
+                "product": {
+                  "example": "any"
+                },
+                "price": {
+                  "example": "any"
+                },
+                "allday_open": {
+                  "example": "any"
+                },
+                "weekday_open": {
+                  "example": "any"
+                },
+                "weekday_open_time": {
+                  "example": "any"
+                },
+                "weekday_rest_time": {
+                  "example": "any"
+                },
+                "weekend_open": {
+                  "example": "any"
+                },
+                "weekend_open_time": {
+                  "example": "any"
+                },
+                "weekend_rest_time": {
+                  "example": "any"
+                },
+                "holiday_open": {
+                  "example": "any"
+                },
+                "service": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "group_seat": {
+                  "example": "any"
+                },
+                "valet": {
+                  "example": "any"
+                },
+                "booking": {
+                  "example": "any"
+                },
+                "pet": {
+                  "example": "any"
+                },
+                "rest_area": {
+                  "example": "any"
+                },
+                "parking": {
+                  "example": "any"
+                },
+                "visit_trip": {
+                  "example": "any"
+                },
+                "wifi": {
+                  "example": "any"
+                },
+                "facilities": {
+                  "example": "any"
+                },
+                "coffee": {
+                  "example": "any"
+                },
+                "addr1": {
+                  "example": "any"
+                },
+                "addr2": {
+                  "example": "any"
+                },
+                "zipcode": {
+                  "example": "any"
+                },
+                "writedate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "esid": {
+                  "example": "any"
+                },
+                "comid": {
+                  "example": "any"
+                },
+                "type": {
+                  "example": "any"
+                },
+                "status": {
+                  "example": "any"
+                },
+                "closure": {
+                  "example": "any"
+                },
+                "product": {
+                  "example": "any"
+                },
+                "price": {
+                  "example": "any"
+                },
+                "allday_open": {
+                  "example": "any"
+                },
+                "weekday_open": {
+                  "example": "any"
+                },
+                "weekday_open_time": {
+                  "example": "any"
+                },
+                "weekday_rest_time": {
+                  "example": "any"
+                },
+                "weekend_open": {
+                  "example": "any"
+                },
+                "weekend_open_time": {
+                  "example": "any"
+                },
+                "weekend_rest_time": {
+                  "example": "any"
+                },
+                "holiday_open": {
+                  "example": "any"
+                },
+                "service": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "group_seat": {
+                  "example": "any"
+                },
+                "valet": {
+                  "example": "any"
+                },
+                "booking": {
+                  "example": "any"
+                },
+                "pet": {
+                  "example": "any"
+                },
+                "rest_area": {
+                  "example": "any"
+                },
+                "parking": {
+                  "example": "any"
+                },
+                "visit_trip": {
+                  "example": "any"
+                },
+                "wifi": {
+                  "example": "any"
+                },
+                "facilities": {
+                  "example": "any"
+                },
+                "coffee": {
+                  "example": "any"
+                },
+                "addr1": {
+                  "example": "any"
+                },
+                "addr2": {
+                  "example": "any"
+                },
+                "zipcode": {
+                  "example": "any"
+                },
+                "writedate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/suggestion/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/holiday": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "comid": {
+                  "example": "any"
+                },
+                "startdate": {
+                  "example": "any"
+                },
+                "enddate": {
+                  "example": "any"
+                },
+                "writedate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "hdid": {
+                  "example": "any"
+                },
+                "comid": {
+                  "example": "any"
+                },
+                "startdate": {
+                  "example": "any"
+                },
+                "enddate": {
+                  "example": "any"
+                },
+                "writedate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/holiday/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/users": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/username": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "query",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/userprofile": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/user": {
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "example": "any"
+                },
+                "fullname": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "image": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/test/user": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/operating-time": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "comid": {
+                  "example": "any"
+                },
+                "allday_open": {
+                  "example": "any"
+                },
+                "weekday_open": {
+                  "example": "any"
+                },
+                "weekday_open_time": {
+                  "example": "any"
+                },
+                "weekday_rest_time": {
+                  "example": "any"
+                },
+                "weekend_open": {
+                  "example": "any"
+                },
+                "weekend_open_time": {
+                  "example": "any"
+                },
+                "weekend_rest_time": {
+                  "example": "any"
+                },
+                "holiday_open": {
+                  "example": "any"
+                },
+                "modifydate": {
+                  "example": "any"
+                },
+                "writedate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "otid": {
+                  "example": "any"
+                },
+                "comid": {
+                  "example": "any"
+                },
+                "allday_open": {
+                  "example": "any"
+                },
+                "weekday_open": {
+                  "example": "any"
+                },
+                "weekday_open_time": {
+                  "example": "any"
+                },
+                "weekday_rest_time": {
+                  "example": "any"
+                },
+                "weekend_open": {
+                  "example": "any"
+                },
+                "weekend_open_time": {
+                  "example": "any"
+                },
+                "weekend_rest_time": {
+                  "example": "any"
+                },
+                "holiday_open": {
+                  "example": "any"
+                },
+                "modifydate": {
+                  "example": "any"
+                },
+                "writedate": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/operating-time/{id}": {
+      "get": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "swagger.json",
+    "url": "./swagger.json"
+  }
+}
